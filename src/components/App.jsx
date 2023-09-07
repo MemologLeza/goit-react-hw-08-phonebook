@@ -1,6 +1,7 @@
 import Filter from './Filter/Filter';
 import ContactList from './ContactList/ContactList';
 import ContactForm from './ContactForm/ContactForm';
+
 const App = () => {
   return (
     <div
@@ -20,6 +21,9 @@ const App = () => {
         <Filter />
         <ContactList />
       </div>
+      {/* <button type="button" onClick={handleClic}>
+        button data
+      </button> */}
     </div>
   );
 };

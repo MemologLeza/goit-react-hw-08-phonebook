@@ -1,23 +1,21 @@
 import styled from './ContacrForm.module.css';
-import { createContact } from 'store/contacts/contactsSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { nanoid } from '@reduxjs/toolkit';
+import { addContactThunk } from 'store/thunks/thunk';
 const ContactForm = () => {
   const { contacts } = useSelector(state => state.contacts);
   const dispatch = useDispatch();
+
   const isDuplicate = name => contacts.find(contact => contact.name === name);
 
   const handleCreateContact = e => {
     e.preventDefault();
     const name = e.target.name.value;
-    const number = e.target.number.value;
-    if (isDuplicate(name)) return alert(`${name} is already in contacts(( `);
-    const newContact = {
-      id: nanoid(),
-      name,
-      number,
-    };
-    dispatch(createContact(newContact));
+    const phone = e.target.number.value;
+    if (isDuplicate(name)) {
+      e.target.reset();
+      return alert(`${name} is already in contacts(( `);
+    }
+    dispatch(addContactThunk({ name, phone }));
     e.target.reset();
   };
   return (
