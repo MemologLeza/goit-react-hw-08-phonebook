@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addContactThunk } from 'store/contacts/thunks/thunk';
+import { addContactThunk } from '../../store/contacts/thunks/thunk';
+
 const ContactForm = () => {
   const { contacts } = useSelector(state => state.contacts);
   const dispatch = useDispatch();

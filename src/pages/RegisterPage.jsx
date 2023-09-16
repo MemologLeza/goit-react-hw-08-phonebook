@@ -30,8 +30,6 @@ const RegisterPage = () => {
             name="name"
             className="form-control"
             id="exampleInputName"
-            // onChange={({ target: { value } }) => setEmail(value)}
-            // value={email}
           />
         </div>
         <div className="mb-3">
@@ -44,8 +42,6 @@ const RegisterPage = () => {
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            // onChange={({ target: { value } }) => setEmail(value)}
-            // value={email}
           />
         </div>
         <div className="mb-3">
@@ -57,8 +53,6 @@ const RegisterPage = () => {
             name="password"
             className="form-control"
             id="exampleInputPassword1"
-            // onChange={({ target: { value } }) => setPassword(value)}
-            // value={password}
           />
         </div>
         <button type="submit" className="btn btn-primary">

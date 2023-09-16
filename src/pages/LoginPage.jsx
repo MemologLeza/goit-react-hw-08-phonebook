@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { login } from 'store/auth/operations/operations';
+import { login } from '../store/auth/operations/operations';
 
 const LoginPage = () => {
   const dispatch = useDispatch();

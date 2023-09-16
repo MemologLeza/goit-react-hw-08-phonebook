@@ -1,4 +1,4 @@
-import { setFilter } from 'store/contacts/filter/filterSlice';
+import { setFilter } from '../../store/contacts/filter/filterSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Filter = () => {

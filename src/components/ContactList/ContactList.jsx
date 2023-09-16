@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import ContactItem from '../ContactItem/ContactItem';
-import { getContactsThunk } from 'store/contacts/thunks/thunk';
+import { getContactsThunk } from '../../store/contacts/thunks/thunk';
 import { useEffect } from 'react';
 
 const ContactList = () => {

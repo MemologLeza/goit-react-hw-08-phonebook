@@ -1,11 +1,10 @@
-import Header from 'components/Header/Header';
-import Loader from 'components/Loader/Loader';
-import { useEffect } from 'react';
+import Header from '../components/Header/Header';
+import Loader from '../components/Loader/Loader';
+import { Suspense, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-
 import { Outlet } from 'react-router-dom';
-import { refresh } from 'store/auth/operations/operations';
-import { useAuth } from 'store/auth/selectors/utils';
+import { refresh } from '../store/auth/operations/operations';
+import { useAuth } from '../store/auth/selectors/utils';
 
 const Layouts = () => {
   const dispatch = useDispatch();
@@ -17,7 +16,9 @@ const Layouts = () => {
     <>
       <Header />
       {isRefreshing && <Loader />}
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };
